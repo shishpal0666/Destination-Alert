@@ -1,38 +1,118 @@
-.App {
-  text-align: center;
+* {
+    font-family: "Roboto", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Styles for the root container */
+.in-root {
+    background-image: url("../public/resources/background.png");
+    background-color: #213555;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Styles for the search component */
+.search {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 30vh;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Styles for the maps component */
+.maps {
+    border-style: solid;
+    border-color: #f0f0f0;
+    border-radius: 6px;
+    box-shadow: 1px 1px 5px;
+    display: flex;
+    justify-content: center;
+    margin-left: 5%;
+    margin-right: 7%;
+    width: 88%;
+    height: 50vh;
 }
 
-.App-link {
-  color: #61dafb;
+/* Styles for the alert page component */
+.alertpage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 20vh;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Styles for text input fields */
+input[type="text"],
+input[type="search"] {
+    font-size: 16px;
+}
+
+/* Styles for the alert distance input field */
+.alert-distance {
+    margin-bottom: 12px;
+    height: 30px;
+    width: auto;
+    border: none;
+    outline: none;
+    background-color: #d8e1eb;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+/* Styles for the start journey button */
+.start-journey {
+    height: 40px;
+    width: auto;
+    border: none;
+    outline: none;
+    background-color: #d8e1eb;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+/* Styles for the search bar */
+.searchbar {
+    background-color: #d8e1eb;
+    margin-top: 8px;
+    margin-left: 4px;
+    margin-right: 4px;
+    margin-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    min-height: 50px;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+}
+
+/* Styles for the location image */
+.loc-img {
+    min-height: 30px;
+    min-width: 30px;
+    margin-right: 4px;
+}
+
+/* Styles for the result list */
+.result-list {
+    display: flex;
+    flex-direction: column;
+    padding: 4px;
+    margin-left: 4px;
+    margin-right: 4px;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    max-height: 280px;
+    overflow-y: scroll;
+}
+
+/* Styles for individual result elements */
+.result-elements {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    background-color: #d8e1eb;
+    height: auto;
 }
