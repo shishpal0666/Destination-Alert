@@ -9,7 +9,7 @@ body {
 }
 
 .container {
-    font-family: "Roboto", sans-serif;    
+    font-family: "Roboto", sans-serif;
     height: 100%;
     width: 100%;
     min-width: 400px;
@@ -18,8 +18,9 @@ body {
     align-items: center;
 }
 
-.destination-details {
+.user-loc {
     background-color: #31304D;
+    /* Deep purple background */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -33,8 +34,8 @@ body {
     color: white;
 }
 
-.address {
-    background-color: #161A30;
+.user-location {
+    background-color: #bababa;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,9 +43,10 @@ body {
     padding: 16px;
     width: 90%;
     height: 60%;
-    border-radius: 5px;
-    white-space: normal; 
-    overflow-x: auto;
+    border: none;
+    border-radius: 6px;
+    box-shadow: 1px 1px 5px;
+    white-space: normal;
 }
 
 .interface-detail {
@@ -123,7 +125,7 @@ body {
     transform: translate(50%, -50%);
 }
 
-.destination-circle {   
+.destination-circle {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -180,9 +182,10 @@ body {
 }
 
 @media screen and (max-width: 400px) {
-     .destination-details,
+
+    .destination-details,
     .distance-interface,
     .stop-alert {
-        margin: 10px 0; 
+        margin: 10px 0;
     }
 }

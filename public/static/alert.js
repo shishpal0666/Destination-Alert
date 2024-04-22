@@ -15,9 +15,17 @@ const startLat = Number(getUrlParam('userLat'));
 const startLon = Number(getUrlParam('userLon'));
 const destinationAddress = getUrlParam('destinationAddress');
 
-// Update the HTML content of the destination-details div with start distance
-const address = document.querySelector('.address');
-address.innerHTML = `<p>Destination Address: ${destinationAddress}</p>`;
+let mapOptions = {
+    center: [startLat, startLon],
+    zoom: 13
+};
+
+let map = new L.map('map', mapOptions);
+let layer = new L.TileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+map.addLayer(layer);
+
+let marker = new L.Marker([startLat, startLon]);
+marker.addTo(map);
 
 // Function to calculate distance from start coordinates to destination coordinates
 const totalDistance = getDistanceFromLatLonInKm(startLat, startLon, lat, lon);
@@ -59,25 +67,35 @@ function getCurrentLocation() {
 // Check user's distance from destination periodically
 const intervalId = setInterval(() => {
     getCurrentLocation().then(userLocation => {
+        map.setView([userLocation.latitude, userLocation.longitude]);
+        marker.setLatLng([userLocation.latitude, userLocation.longitude]);
+
         const remainingDistance = getDistanceFromLatLonInKm(userLocation.latitude, userLocation.longitude, lat, lon);
         const remainingAlertDistance = remainingDistance - AlertDistance;
 
         const movedPercentage = ((totalAlertDistance - remainingAlertDistance) / totalAlertDistance) * 100;
         const pixelDistance = document.querySelector('.destination-point').offsetLeft - document.querySelector('.start-point').offsetLeft - 40;
 
-        if (movedPercentage > 0 && movedPercentage <= 100) {
-            // Position user point on the dotted line
-            const dottedLine = document.querySelector('.dotted-line');
-            const startOffset = 30; // Offset of the start point from the left
-            const userPoint = document.querySelector('.user-point');
-            const newPosition = startOffset + Math.round(pixelDistance * movedPercentage / 100);
-            userPoint.style.left = `${newPosition}px`;
-        } else if (movedPercentage > 100) {
-            // Position user point at the end of the dotted line
+        if (movedPercentage > 100 || remainingAlertDistance <= 0) {
             const userPoint = document.querySelector('.user-point');
             const newPosition = 30 + pixelDistance;
             userPoint.style.left = `${newPosition}px`;
         }
+
+        if (movedPercentage > 0 && movedPercentage <= 100) {
+            // position the user point math.ceel of 220*movedPercentage px from start on dotted line 
+            const startOffset = 30; // Offset of the start point from the left
+            const userPoint = document.querySelector('.user-point');
+            const newPosition = startOffset + Math.round(pixelDistance * movedPercentage / 100);
+            userPoint.style.left = `${newPosition}px`;
+        }
+
+        if (movedPercentage <= 0 && remainingAlertDistance > 0) {
+            const userPoint = document.querySelector('.user-point');
+            const newPosition = 30;
+            userPoint.style.left = `${newPosition}px`;
+        }
+
 
         if (remainingAlertDistance <= 0) {
             // User is within the alert remainingDistance
