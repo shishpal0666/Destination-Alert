@@ -99,13 +99,21 @@ const intervalId = setInterval(() => {
 
         if (remainingAlertDistance <= 0) {
             // User is within the alert remainingDistance
-            audio.play();
+            playAudio();
             clearInterval(intervalId);
         }
     }).catch(error => {
         console.error("Error getting user location:", error.message);
     });
 }, 5000); // Check every 5 seconds
+
+
+// to overcome the google policy
+document.getElementById('play').addEventListener('click', playAudio);
+function playAudio() {
+    audio.play();
+}
+
 
 // Event listener to stop the audio
 document.getElementById('stop').addEventListener('click', stopsound);
