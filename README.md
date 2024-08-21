@@ -40,12 +40,14 @@ To run the project locally, follow these steps:
    http://localhost:3000
 
 ## Usage
-Set Your Destination:
+   Set Your Destination:
 
-Enter the name or coordinates of your destination in the input field.
-The map will update to show the destination.
-Track Your Location:
+   Enter the name or coordinates of your destination in the input field.
+   The map will update to show the destination.
 
-Allow the application to access your location.
-The map will display your real-time location.
+   
+   Track Your Location:
+
+   Allow the application to access your location.
+   The map will display your real-time location.
 
