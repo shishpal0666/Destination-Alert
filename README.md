@@ -37,9 +37,9 @@ To run the project locally, follow these steps:
    ```
 4. **Open your browser and navigate to:**
 
-http://localhost:3000
+   http://localhost:3000
 
-##Usage
+## Usage
 Set Your Destination:
 
 Enter the name or coordinates of your destination in the input field.
