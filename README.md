@@ -26,20 +26,20 @@ To run the project locally, follow these steps:
    ```bash
    git clone https://github.com/your-username/destination-alert-system.git
    cd destination-alert-system
-Install dependencies:
+2. **Install dependencies:**
 
    ```bash
-      npm install
-```
-Start the development server:
-```bash
-npm start
-```
-Open your browser and navigate to:
-
+   npm install
+   ```
+3. **Start the development server:**
+   ```bash
+   npm start
+   ```
+4. **Open your browser and navigate to:**
 
 http://localhost:3000
-#Usage
+
+##Usage
 Set Your Destination:
 
 Enter the name or coordinates of your destination in the input field.
