@@ -28,16 +28,18 @@ To run the project locally, follow these steps:
    cd destination-alert-system
 Install dependencies:
 
-
-npm install
+   ```bash
+      npm install
+```
 Start the development server:
-
+```bash
 npm start
+```
 Open your browser and navigate to:
 
 
 http://localhost:3000
-Usage
+#Usage
 Set Your Destination:
 
 Enter the name or coordinates of your destination in the input field.
@@ -46,22 +48,4 @@ Track Your Location:
 
 Allow the application to access your location.
 The map will display your real-time location.
-Receive Alerts:
-
-Set a proximity distance for alerts (e.g., 500 meters).
-You'll receive an alert when you're within the specified distance of your destination.
-Contributions
-Contributions are welcome! If you have any ideas or improvements, feel free to fork the repository and submit a pull request.
-
-
-**Next Steps:**
-- **W:** Proceed to set up the project and code the core functionalities.
-- **A:** Consider alternative map libraries or APIs for broader feature support.
-- **S:** Request an explanation of the distance calculation using the Haversine formula.
-- **E:** Expand on the feature list, considering notifications through different channels.
-
-
-
-
-
 
